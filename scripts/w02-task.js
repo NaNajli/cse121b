@@ -5,7 +5,7 @@
 /* Step 2 - Variables */
 let fullName = "Nadia Rodriguez";
 let currentYear = "2023";
-let profilePicture = "images/nadiaphoto.jpg"
+let profilePicture = "images/nadiaphoto.png"
 
 const nameElement = document.getElementById("name");
 const foodElement = document.getElementById("food");
