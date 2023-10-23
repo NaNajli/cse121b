@@ -1,14 +1,13 @@
 const rooomsElement = document.querySelector("#rooms");
 let bethroomList = [];
 
-
 const displayBethrooms = (bethrooms) => {
 
     bethrooms.forEach(bethroom=>{
 
         
            let article = document.createElement("article");
-           let room = document.createElement("h1");
+           let room = document.createElement("h3");
            let img = document.createElement("img");
            let price = document.createElement("p");
            let amenities = document.createElement("p");
@@ -16,6 +15,7 @@ const displayBethrooms = (bethrooms) => {
            img.setAttribute("src",bethroom.imageUrl);
            img.setAttribute("alt",bethroom.room);
            img.setAttribute("alt",bethroom.price);
+           article.appendChild(room);
            article.appendChild(img);
            article.appendChild(price);
            article.appendChild(amenities);
@@ -24,7 +24,7 @@ const displayBethrooms = (bethrooms) => {
            price.textContent = bethroom.price;
            amenities.textContent = bethroom.amenities;
            facilities.textContent = bethroom.facilities;
-           
+
            
            rooomsElement.appendChild(article);
           
@@ -32,7 +32,7 @@ const displayBethrooms = (bethrooms) => {
 
 
       const getBethRooms = async ()=>{
-    
+      
        const response = await fetch("https://run.mocky.io/v3/a7a34c96-e286-4e77-b830-a7e000cbf622");
        bethroomList = await response.json(); 
        displayBethrooms(bethroomList);
