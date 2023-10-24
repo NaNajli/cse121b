@@ -4,8 +4,12 @@ let bethroomList = [];
 const displayBethrooms = (bethrooms) => {
 
     bethrooms.forEach(bethroom=>{
+           
+           
 
-        
+           let titleprice =" PRICE: $";
+           let titleamenities = "AMENITIES: ";
+           let titlefacilities = "FACILITIES: ";
            let article = document.createElement("article");
            let room = document.createElement("h3");
            let img = document.createElement("img");
@@ -24,12 +28,21 @@ const displayBethrooms = (bethrooms) => {
            price.textContent = bethroom.price;
            amenities.textContent = bethroom.amenities;
            facilities.textContent = bethroom.facilities;
+           rooomsElement.appendChild(article);
+           price.prepend(titleprice);
+           amenities.prepend(titleamenities);
+           facilities.prepend(titlefacilities);
+           
+          
+          
 
            
-           rooomsElement.appendChild(article);
-          
+           
+
     })};
 
+        
+     
 
       const getBethRooms = async ()=>{
       
@@ -67,5 +80,8 @@ const displayBethrooms = (bethrooms) => {
             
         /* Event Listener */
         document.querySelector("#sortByroom").addEventListener("change",()=>{sortByroom(bethroomList)});
+        
        
+        
+
 
